@@ -1,0 +1,55 @@
+# Environment
+.env
+.env.local
+.env.*.local
+venv/
+env/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Results (generated files)
+*.xlsx
+*.json
+!package.json
+!package-lock.json
+
+# Logs
+*.log
+logs/
+
+# PaddleOCR models cache
+~/.paddleocr/
+
+# Temporary files
+tmp/
+temp/
+*.tmp

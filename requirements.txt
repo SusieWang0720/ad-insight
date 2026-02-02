@@ -1,0 +1,10 @@
+google-search-results
+python-dotenv
+pandas
+openpyxl
+paddlepaddle
+paddleocr
+Pillow
+requests
+flask
+flask-cors
