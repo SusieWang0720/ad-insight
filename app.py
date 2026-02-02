@@ -1125,7 +1125,13 @@ if __name__ == "__main__":
     print(f"OCR 功能: {'可用' if OCR_AVAILABLE else '不可用'}")
     print(f"SerpAPI Key: {'已配置' if API_KEY else '未配置'}")
     print(f"Gemini AI: {'已配置 ✓' if GEMINI_API_KEY else '未配置 (将使用规则生成报告)'}")
-    print("启动服务器: http://localhost:8080")
+    
+    # 支持云平台的动态端口（如 Railway, Render）
+    port = int(os.getenv("PORT", 8080))
+    host = os.getenv("HOST", "0.0.0.0")
+    debug = os.getenv("FLASK_DEBUG", "False").lower() == "true"
+    
+    print(f"启动服务器: http://{host}:{port}")
     print("=" * 50)
     
-    app.run(debug=True, host="0.0.0.0", port=8080)
+    app.run(debug=debug, host=host, port=port)

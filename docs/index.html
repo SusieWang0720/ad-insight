@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdInsight - Google Ads Transparency Analyzer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --accent-primary: #00d4aa;
+            --accent-secondary: #7c3aed;
+            --accent-gradient: linear-gradient(135deg, #00d4aa 0%, #00b4d8 50%, #7c3aed 100%);
+            --text-primary: #f0f0f5;
+            --text-secondary: #a0a0b0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .description {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 40px;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        .description h2 {
+            color: var(--accent-primary);
+            margin-bottom: 16px;
+            font-size: 1.5rem;
+        }
+
+        .description ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .description li {
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .description li:before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 212, 170, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--bg-secondary);
+            border: 1px solid var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 212, 170, 0.1);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 20px;
+            color: #10b981;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        .footer {
+            margin-top: 60px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">📊</div>
+        <h1>AdInsight</h1>
+        <p class="subtitle">Google Ads Transparency Center 广告数据分析工具</p>
+
+        <div class="description">
+            <h2>🚀 功能特性</h2>
+            <ul>
+                <li><strong>广告数据爬取</strong>：输入品牌域名，自动获取其在 Google 的广告投放数据</li>
+                <li><strong>OCR 识别</strong>：自动提取图片广告中的文字内容</li>
+                <li><strong>AI 分析报告</strong>：集成 Gemini AI 生成深度竞品分析报告</li>
+                <li><strong>数据导出</strong>：支持 Excel、JSON、Markdown 格式导出</li>
+                <li><strong>分页展示</strong>：每页 9 个广告，点击查看完整详情</li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <a href="https://ad-insight-production.up.railway.app" class="btn btn-primary" target="_blank">
+                <span>🚀</span>
+                <span>访问应用</span>
+            </a>
+            <a href="https://github.com/SusieWang0720/ad-insight" class="btn btn-secondary" target="_blank">
+                <span>📦</span>
+                <span>查看源码</span>
+            </a>
+        </div>
+
+        <div class="status-badge">
+            ✅ 应用已部署到 Railway
+        </div>
+
+        <div class="footer">
+            <p>
+                <a href="https://github.com/SusieWang0720/ad-insight">GitHub</a> · 
+                <a href="https://github.com/SusieWang0720/ad-insight/blob/main/README.md">文档</a> · 
+                Made with ❤️
+            </p>
+        </div>
+    </div>
+</body>
+</html>
